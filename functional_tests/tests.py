@@ -2,6 +2,7 @@ from django.test import LiveServerTestCase
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
+
 class NewVisterTest(LiveServerTestCase):
     def setUp(self):
         self.browser = webdriver.Chrome()
@@ -51,7 +52,7 @@ class NewVisterTest(LiveServerTestCase):
         inputbox.send_keys(Keys.ENTER)
 
         edith_list_url = self.browser.current_url
-        #self.assertRegex(edith_list_url, '/lists/.+') #Python 3
+        # self.assertRegex(edith_list_url, '/lists/.+') #Python 3
         self.assertRegexpMatches(edith_list_url, '/lists/.+')
 
         self.check_for_row_in_list_table('1: Buy peacock feathers')

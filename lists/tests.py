@@ -7,6 +7,7 @@ from lists.models import Item, List
 
 import re
 
+
 class ListViewTest(TestCase):
 
     def test_passes_correct_list_to_template(self):
@@ -34,6 +35,7 @@ class ListViewTest(TestCase):
         self.assertContains(response, 'itemey 2')
         self.assertNotContains(response, 'other list item 1')
         self.assertNotContains(response, 'other list item 2')
+
 
 class ListAndItemModelsTest(TestCase):
 
@@ -63,7 +65,6 @@ class ListAndItemModelsTest(TestCase):
         self.assertEqual(first_saved_item.list, list_)
         self.assertEqual(second_saved_item.text, 'Item the second')
         self.assertEqual(second_saved_item.list, list_)
-
 
 
 class HomePageTest(TestCase):
@@ -96,6 +97,7 @@ class HomePageTest(TestCase):
         home_page(request)
         self.assertEqual(Item.objects.count(), 0)
 
+
 class NewListTest(TestCase):
     def test_saving_a_POST_request(self):
         self.client.post(
@@ -113,6 +115,7 @@ class NewListTest(TestCase):
         )
         new_list = List.objects.first()
         self.assertRedirects(response, '/lists/%d/' % (new_list.id, ))
+
 
 class NewItemTest(TestCase):
 
