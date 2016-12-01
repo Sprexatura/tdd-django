@@ -17,12 +17,12 @@ sudo pip3 install virtualenv
 ## Setup for Nginx virtual host
 
 * Check nginx.template.conf
-* Modify 'superlists-staging.co.kr' to your site
+* Modify 'SITENAME' to your site
 
 ## Upstart Job
 
 * Check gunicorn-upstart.template.conf
-* Modify 'superlists-staging.co.kr' to your site
+* Modify 'SITENAME' to your site
 
 ## Structure
 Assumption: User's home is /home/username
