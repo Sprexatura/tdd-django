@@ -42,4 +42,4 @@ class ItemValidationTest(FunctionalTest):
         # Error Msg Print
         self.check_for_row_in_list_table('1: Buy Coke')
         error = self.browser.find_element_by_css_selector('.has-error')
-        self.assertEqual(error.text, 'Duplicate Item')
+        self.assertEqual(error.text, 'Item already exist in list')
